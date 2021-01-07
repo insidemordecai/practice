@@ -1,25 +1,26 @@
 class Solution {
   public int solution(int N) {
-    int largestGap = 0;
+    int maxGap = 0;
 
-    if (N > 0 && N <= 2147483647) {
+    if (N >= 1 && N <= 2147483647) {
       int gap = 0;
 
-      char binaryValue[] = Integer.toBinaryString(N).toCharArray();
+      String binaryValue = Integer.toBinaryString(N);
 
-      for (int i = 0; i < binaryValue.length; i++) {
-        if (binaryValue[i] == '0') {
-          gap++;
-          continue;
-        } else if (binaryValue[i] == '1') {
-          if (gap > largestGap) {
-            largestGap = gap;
-            gap = 0;
+      for (int i = 0; i < binaryValue.length(); i++) {
+        if (binaryValue.charAt(i) == '1') {
+          if (gap > 0 && gap > maxGap) {
+            maxGap = gap;
           }
+          gap = 0;
+          continue;
+        } else if (binaryValue.charAt(i) == '0') {
+          gap++;
         }
       }
+
     }
 
-    return largestGap;
+    return maxGap;
   }
 }
