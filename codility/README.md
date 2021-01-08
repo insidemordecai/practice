@@ -1,6 +1,7 @@
 # Lessons and their subsequent sub-lessons
 
 1. Iterations
-    - Binary Gap
+   - Binary Gap
 2. Arrays
-    - Cyclic Rotation
+   - Cyclic Rotation
+   - Odd Occurences In Arrays
